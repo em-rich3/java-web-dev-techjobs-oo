@@ -32,16 +32,35 @@ public class JobTest {
     @Test
     public void testJobConstructorSetsAllFields() {
         assertEquals(1, testJob1.getId(), .001);
-        assertEquals("Product tester", testJob1.getName());
-        assertEquals("ACME", testJob1.getEmployer().getValue());
-        assertEquals("Desert", testJob1.getLocation().getValue());
-        assertEquals("Quality control", testJob1.getPositionType().getValue());
-        assertEquals("Persistence", testJob1.getCoreCompetency().getValue());
+        assertEquals("Name: Product tester", testJob1.getName());
+        assertEquals("Employer: ACME", testJob1.getEmployer().getValue());
+        assertEquals("Location: Desert", testJob1.getLocation().getValue());
+        assertEquals("Position Type: Quality control", testJob1.getPositionType().getValue());
+        assertEquals("Core Competency: Persistence", testJob1.getCoreCompetency().getValue());
     }
 
     @Test
     public void testJobsForEquality() {
         assertNotEquals(testJob2, testJob3);
+    }
+
+    @Test
+    public void toStringTest() {
+        assertEquals("/n" +
+                testJob1.getId() + "/n" +
+                testJob1.getName() + "/n" +
+                testJob1.getEmployer() + "/n" +
+                testJob1.getLocation() + "/n" +
+                testJob1.getPositionType() + "/n" +
+                testJob1.getCoreCompetency() + "/n" +
+                "/n", testJob1.toString());
+    }
+
+    @Test
+    public void toStringEmptyField() {
+        Job testJob4 = new Job("Product tester", new Employer("ACME"), new Location(null), new PositionType(""), new CoreCompetency(null));
+        assertEquals("Location: Data Not Available", testJob4.getLocation().getValue());
+        assertEquals("Position Type: Data Not Available", testJob4.getPositionType().getValue());
 
     }
 }

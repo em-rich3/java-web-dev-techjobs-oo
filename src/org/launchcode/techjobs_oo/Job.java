@@ -33,6 +33,18 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
+    public String toString() {
+
+        return "/n" +
+                getId() + "/n" +
+                getName() + "/n" +
+                getEmployer() + "/n" +
+                getLocation() + "/n" +
+                getPositionType() + "/n" +
+                getCoreCompetency() + "/n" +
+                "/n";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -49,7 +61,13 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
-    public String getName() { return name;    }
+    public String getName() {
+        if (name == null || name.equals("")) {
+            return "Name: Data Not Available";
+        } else {
+            return "Name: " + name;
+        }
+    }
 
     public void setName(String name) { this.name = name;    }
 
