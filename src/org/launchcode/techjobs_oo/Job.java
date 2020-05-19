@@ -68,4 +68,6 @@ public class Job {
     public CoreCompetency getCoreCompetency() { return coreCompetency;    }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) { this.coreCompetency = coreCompetency;    }
+
+    public int getId() { return id; }
 }
