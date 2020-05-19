@@ -35,14 +35,13 @@ public class Job {
 
     public String toString() {
 
-        return "/n" +
-                getId() + "/n" +
-                getName() + "/n" +
-                getEmployer() + "/n" +
-                getLocation() + "/n" +
-                getPositionType() + "/n" +
-                getCoreCompetency() + "/n" +
-                "/n";
+        return "\n" +
+                "ID: " + getId() + "\n" +
+                getName() + "\n" +
+                getEmployer().getValue() + "\n" +
+                getLocation().getValue() + "\n" +
+                getPositionType().getValue() + "\n" +
+                getCoreCompetency().getValue() + "\n";
     }
 
     @Override

@@ -46,14 +46,13 @@ public class JobTest {
 
     @Test
     public void toStringTest() {
-        assertEquals("/n" +
-                testJob1.getId() + "/n" +
-                testJob1.getName() + "/n" +
-                testJob1.getEmployer() + "/n" +
-                testJob1.getLocation() + "/n" +
-                testJob1.getPositionType() + "/n" +
-                testJob1.getCoreCompetency() + "/n" +
-                "/n", testJob1.toString());
+        assertEquals("\n" +
+                "ID: " + testJob1.getId() + "\n" +
+                testJob1.getName() + "\n" +
+                testJob1.getEmployer().getValue() + "\n" +
+                testJob1.getLocation().getValue() + "\n" +
+                testJob1.getPositionType().getValue() + "\n" +
+                testJob1.getCoreCompetency().getValue() + "\n", testJob1.toString());
     }
 
     @Test
